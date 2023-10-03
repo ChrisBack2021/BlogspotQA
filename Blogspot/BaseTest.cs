@@ -22,5 +22,12 @@ namespace Blogspot
             driver.Manage().Window.Maximize();
             driver.Navigate().GoToUrl(url);
         }
+
+        [TestCleanup]
+        public void Cleanup()
+        {
+            Thread.Sleep(2000);
+            driver.Close();
+        }
     }
 }
